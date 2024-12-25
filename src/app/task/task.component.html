@@ -1,0 +1,36 @@
+<div class="task-container">
+    <img src="{{taskImg}}" alt="" draggable="false" *ngIf="showTaskImg">
+    <div class="task-name--container">
+        <p class="task-name">{{taskName}}</p>
+        <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="deleteTask()">
+              <mat-icon>delete</mat-icon>
+              <span>Delete task</span>
+            </button>
+            <button mat-menu-item (click)="editTask()">
+              <mat-icon>edit</mat-icon>
+              <span>Edit task</span>
+            </button>
+          </mat-menu>
+    </div>
+    <p class="task-description">{{taskDescription}}</p>
+    <div class="task-info">
+        <div class="task-date">
+            <mat-icon>calendar_month</mat-icon>
+            <p>{{taskDate}}</p>
+        </div>
+        <div class="users">
+            <div class="user user1">
+                <mat-icon>face_6</mat-icon>
+            </div>
+            <div class="user user2">
+                <mat-icon>face_6</mat-icon>
+            </div>
+            
+            <button class="user user4">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+.task-container{
+    width: 100%;
+    background-color: #ffff;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2em;
+    gap: 1em;
+}
+
+img{
+    width: 100%;
+    height: 9em;
+    border-radius: 1.5em;
+}
+
+.task-name--container mat-icon{
+    color: #a8a8a8;
+}
+
+.task-name{
+    font-weight: bold;
+    letter-spacing: .1em;
+    font-size: 1.2em;
+}
+
+div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-info{
+    width: 100%;
+    display: flex;
+    gap: 3em;
+}
+
+.task-date{
+    display: flex;
+    align-items: center;
+    
+    color: #a8a8a8;
+}
+
+p{
+    margin: 0;
+}
+
+.users{
+    display: flex; 
+}
+
+.user{
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    color: white;
+    background-color: #00509B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user mat-icon{
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user1{
+    z-index: 1;
+    
+}
+
+.user2{
+    z-index: 2;
+    transform: translateX(-15px);
+    background-color: #DAA698;
+}
+.user4{
+    z-index: 4;
+    transform: translateX(-35px);
+}

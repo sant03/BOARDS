@@ -1,0 +1,82 @@
+<div class="todo-section--container" cdkDropListGroup>
+    <div class="todo" id="todo">
+        <div class="todo-title">
+            <div class="todo-color"></div>
+            <h4>To do</h4>
+            <mat-icon class="add-button" (click)="addTask('todo')">add</mat-icon>
+        </div>
+        <div class="tasks" cdkDropList [cdkDropListData]="todoTasks" (cdkDropListDropped)="drop($event)">
+            <app-task 
+            *ngFor="let task of todoTasks; let i = index" 
+            cdkDrag [@slideInFromBottom]="{ value: '', params: { delay: getAnimationDelay(i) } }"
+            [showTaskImg]="task.img != null"
+            [task]="'todo'"
+            [taskImg]="task.img"
+            [taskName]="task.name"
+            [taskDescription]="task.description"
+            [taskDate]="task.date"
+            [taskUsers]="task.users"
+            ></app-task>
+        </div>
+    </div>
+    <div class="todo" id="doing">
+        <div class="todo-title">
+            <div class="todo-color"></div>
+            <h4>Doing</h4>
+            <mat-icon class="add-button" (click)="addTask('doing')">add</mat-icon>
+        </div>
+        <div class="tasks" cdkDropList [cdkDropListData]="doingTasks" (cdkDropListDropped)="drop($event)">
+            <app-task 
+            *ngFor="let task of doingTasks; let i = index" 
+            cdkDrag [@slideInFromBottom]="{ value: '', params: { delay: getAnimationDelay(i) } }"
+            [showTaskImg]="task.img != null"
+            [task]="'doing'"
+            [taskImg]="task.img"
+            [taskName]="task.name"
+            [taskDescription]="task.description"
+            [taskDate]="task.date"
+            [taskUsers]="task.users"
+            ></app-task>
+        </div>
+    </div>
+    <div class="todo" id="under-review">
+        <div class="todo-title">
+            <div class="todo-color"></div>
+            <h4>Under review</h4>
+            <mat-icon class="add-button" (click)="addTask('underReview')">add</mat-icon>
+        </div>
+        <div class="tasks" cdkDropList [cdkDropListData]="underReviewTasks" (cdkDropListDropped)="drop($event)">
+            <app-task 
+            *ngFor="let task of underReviewTasks; let i = index" 
+            cdkDrag [@slideInFromBottom]="{ value: '', params: { delay: getAnimationDelay(i) } }"
+            [showTaskImg]="task.img != null"
+            [task]="'underReview'"
+            [taskImg]="task.img"
+            [taskName]="task.name"
+            [taskDescription]="task.description"
+            [taskDate]="task.date"
+            [taskUsers]="task.users"
+            ></app-task>
+        </div>
+    </div>
+    <div class="todo" id="done">
+        <div class="todo-title">
+            <div class="todo-color"></div>
+            <h4>Done</h4>
+            <mat-icon class="add-button" (click)="addTask('done')">add</mat-icon>
+        </div>
+        <div class="tasks" cdkDropList [cdkDropListData]="doneTasks" (cdkDropListDropped)="drop($event)">
+            <app-task 
+            *ngFor="let task of doneTasks; let i = index" 
+            cdkDrag [@slideInFromBottom]="{ value: '', params: { delay: getAnimationDelay(i) } }"
+            [showTaskImg]="task.img != null"
+            [task]="'done'"
+            [taskImg]="task.img"
+            [taskName]="task.name"
+            [taskDescription]="task.description"
+            [taskDate]="task.date"
+            [taskUsers]="task.users"
+            ></app-task>
+        </div>
+    </div>
+</div>

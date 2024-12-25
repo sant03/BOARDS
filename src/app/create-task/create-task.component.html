@@ -1,0 +1,30 @@
+<div class="task-container">
+    <img  src="../../assets/photograph.png" alt="" draggable="false" *ngIf="taskImg == null">
+    <img src="{{taskImg}}" alt="" class="task-uploaded-photo" *ngIf="taskImg != null">
+    <input class="add-photo" type="file" accept="image/*" (change)="getUploadedImg($event)">
+    <p class="task-photo">Add a Picture</p>
+    <div class="task-name--container">
+        <input type="text" class="task-name" placeholder="Add a task name" [(ngModel)]="taskName">
+    </div>
+    <textarea class="task-description" placeholder="Add a task description" [(ngModel)]="taskDescription"></textarea>
+    <div class="task-info">
+        <div class="task-date">
+            <input type="date" [(ngModel)]="taskDate">
+        </div>
+        <!-- <div class="users">
+            <div class="user user1">
+                <mat-icon>face_6</mat-icon>
+            </div>
+            <div class="user user2">
+                <mat-icon>face_6</mat-icon>
+            </div>
+            
+            <button class="user user4">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div> -->
+        <button class="add-user">Add friends<mat-icon>add</mat-icon></button>
+    </div>
+    <button class="add-task" (click)="addTask()" *ngIf="!data">Done</button>
+    <button class="add-task" (click)="updateTask()" *ngIf="data">Update Task</button>
+</div>
